@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: #ccc;
+}
+header{
+    width: auto;
+    height: 0.88rem;
+    background-color: #52AFE9;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 0.88rem;
+    color: #fff;
+    position: relative;
+}
+header .audiobtn{
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.24rem;
+}
+header .audiobtn img{
+    width: 100%;
+    height: 100%;
+}
+.screen{
+    width: auto;
+    height: 8.2rem;
+    background-color: #52AFE9;
+    background-image: -webkit-linear-gradient(#52AFE9,#70D3F6) ; 
+    position: relative;  
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.screen::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/screen.png"),url("../img/wind.png"),url("../img/water");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.screen .aqi{
+    width: 0.76rem;
+    height: 0.88rem;
+    border-radius: 0.1rem;
+    background-color: #ffd737;
+    position: absolute;
+    top: 0.24rem;
+    left: 0.24rem;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center；
+}
+.screen h3{
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    position: relative;
+}
+.screen h3::after{
+    content: "°";
+    position: absolute;
+    top: 0;
+    left: 50%rem;
+}
+.screen h4{
+    font-size: 0.5rem; 
+}
+.screen h5{
+    font-size: 0.3rem; 
+}
+.day{
+    width: auto;
+    height: 2rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.day>div{
+    width: 50%;
+    height: 1.04rem;
+    font-size: 0.24rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.day>div span{
+    padding: 0.05rem 0.5rem;
+}
+.day>div span img{
+    width: 0.6rem;
+}
+.hours{
+    width: 100%;
+    height: 2.9rem;
+    background-color: #fff;
+    margin-top: 0.2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.hours::-webkit-scrollbar{
+    display: none;
+}
+.hours .con{
+    width: auto;
+    height: 2.9rem;
+    display: flex;
+}
+.hours .con .box{
+    width: 1.14rem;
+    height: 1.6rem;
+    background-color: #fff;
+    margin-top: 0.6rem;
+    font-size: 0.24rem;
+    text-align: center;
+}
+.hours .con .box img{
+    width: 0.48rem;
+    height: 0.48rem;
+    margin: 0.2rem;
+}
+.week{
+    width: auto;
+    height: 9rem;
+    background-color: #fff;
+    margin-top: 0.2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    color: #bbb;
+}
+.week::-webkit-scrollbar{
+    display: none;
+}
+.week .con{
+    width: 18rem;
+    height: 9rem;
+    display: flex;
+}
+.week .con .box{
+    width: 1.2rem;
+    height: 9rem;
+    background-color: #fff;
+    margin-top: 0.6rem; 
+    font-size: 0.24rem;
+    text-align: center;
+}
+.week .con .box img{
+    width: 0.48rem;
+    height: 0.48rem;
+    margin: 0.2rem;
+}
+.week .canvas{ 
+    width: 18rem;
+    height: 2.72rem;
+    background-color: #fff;
+    overflow-x: auto;
+    position: absolute;
+    top: 3.2rem;
+    left: 0;
+}
+/* 弹窗 */
+.cityBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #434343;
+    display: none;
+    overflow-y: auto;
+}
+.cityBox .search{
+    width: 100%;
+    height: 0.88rem;
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+    /* background-color: #ccc; */
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cityBox .search input{
+    width: 5rem;
+    height: 0.4rem;
+    padding: 0.1rem 0 0.1rem 0.64rem;
+    background-color: #f2f2f2;
+    display: block;
+    margin-top: 0.12rem;
+    border: none;
+    border-radius: 0.4rem;
+    outline: none;
+}
+.cityBox .search .btn{
+    width: 1.3rem;
+    height: 0.88rem;
+    display: block;
+    background-color: #fff;
+    border:0;
+    outline: none;
+}
+.cityBox h2{
+    padding: 0.24rem;
+    font-size: 0.3rem;
+}
+.cityBox .con{
+    padding: 0 0.24rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.cityBox .con div{
+    width: 2.2rem;
+    height: 0.64rem;
+    background-color: #f2f2f2;
+    border-radius: 0.64rem;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.64rem;
+    margin-bottom: 0.2rem;
+}
+.cityBox .con div:nth-child(3n-1){
+    margin: 0 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

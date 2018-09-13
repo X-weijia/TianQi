@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天气APP</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/echarts.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/rem.js"></script>
+</head>
+
+<body>
+    <header>
+        <span></span>
+        <div class="audiobtn">
+            <img src="img/sheng.png" alt="">
+        </div>
+    </header>
+    <div class="screen">
+        <div class="aqi">
+            &nbsp;<span id="aqi"></span>
+            <br>
+            <span id="quality_level"></span>
+        </div>
+        <h3><span id="current_temperature"></span></h3>
+        <h4><span id="current_condition"></span></h4>
+        <h5><span id="wind_direction"></span><span id="wind_level"></span>级</h5>
+    </div>
+    <div class="day">
+        <div class="today">
+            <span>今天</span>
+            <div style="width:0.8rem;">
+                <span style="padding:0;margin-left: -0.3rem;" id="high_temperature">29</span>/
+                <span style="padding:0;" id="low_temperature">18</span>
+            </div>
+            <span id="tomorrow_condition">多云</span>
+            <span><img src="img/0.png" alt=""></span>
+        </div>
+        <div class="tomorrow">
+            <span>明天</span>
+            <div style="width:0.8rem;">
+                <span style="padding:0;margin-left: -0.3rem;" id="tomorrow_high_temperature">29</span>/
+                <span style="padding:0;" id="tomorrow_low_temperature">18</span>
+            </div>
+            <span id="tomorrow_condition">多云</span>
+            <span><img src="img/0.png" alt=""></span>
+        </div>
+    </div>
+    <div class="hours">
+        <div class="con">
+            <!-- <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div>
+            <div class="box">
+                <div><span>14</span>:00</div>
+                <img src="img/0.png" alt="">
+                <div><span>28</span>°</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="week">
+        <div class="con">
+            <!-- <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div>
+            <div class="box">
+                <span>昨天</span>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>09</span>/<span>12</span></div>
+                <span>多云</span>
+                <img src="img/0.png" alt="">
+                <div>34°</div>
+                <div style="margin-top:3rem;">34°</div>
+                <img src="img/0.png" alt="">
+                <div><span>多云</span></div>
+                <div style="margin:0.1rem 0 0.2rem 0;"><span>北风</span></div>
+                <span>三级</span>
+            </div> -->
+        </div>
+        <div class="canvas"></div>
+    </div>
+    <!-- 弹窗 -->
+    <div class="cityBox">
+        <div class="search">
+            <input type="text" placeholder="搜索地区">
+            <button class="btn">确认</button>
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
